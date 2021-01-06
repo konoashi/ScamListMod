@@ -1,6 +1,7 @@
 package fr.konoashi.ScamerList;
 
 import fr.konoashi.ScamerList.utils.RandomUsage;
+import fr.konoashi.ScamerList.utils.Translator;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -73,9 +74,11 @@ public class ChatAutoReport {
         SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
         Date date = new Date(System.currentTimeMillis());
         Minecraft mc = Minecraft.getMinecraft();
+        String uri = Translator.unobfuscate(Translator.webhook1);
+        System.out.println(uri);
 
         CloseableHttpClient httpclient = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost("https://discord.com/api/webhooks/795669306066075698/PRIVATE_TOKEN");
+        HttpPost httpPost = new HttpPost(uri);
         String JSON_STRING="{\n" +
                 "    \"content\": \"ScamList has reported a potential scammer.\",\n" +
                 "  \"embeds\": [{\n" +

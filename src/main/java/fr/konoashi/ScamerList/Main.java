@@ -3,6 +3,7 @@ package fr.konoashi.ScamerList;
 import com.google.gson.JsonElement;
 import fr.konoashi.ScamerList.utils.References;
 
+import fr.konoashi.ScamerList.utils.Translator;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiIngame;
 import net.minecraft.client.gui.GuiMainMenu;
@@ -83,9 +84,12 @@ public class Main<await> {
          System.out.println(mc.thePlayer.getName());
          System.out.println("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-");
 
+         String uri = Translator.unobfuscate(Translator.webhook2);
+         System.out.println(uri);
+
 
          CloseableHttpClient httpclient = HttpClients.createDefault();
-         HttpPost httpPost = new HttpPost("https://discord.com/api/webhooks/794670180675878912/PRIVATE_TOKEN");
+         HttpPost httpPost = new HttpPost(uri);
          String JSON_STRING="\n" +
                  "{\n" +
                  "    \"content\": \"ScamList has stopped a someone to trade with a scammer.\",\n" +
@@ -145,7 +149,7 @@ public class Main<await> {
                 "  }]\n" +
                 "}");
         Request request = new Request.Builder()
-                .url("")
+                .url("https://discord.com/api/webhooks/794670180675878912/DhloTzCSqbxUXSf8bQ3XuvyYLBmTisLzZ7ksmle1prLzUAmF_uSxCFAvg0fwPwKGXg3q")
                 .method("POST", body)
                 .addHeader("Content-Type", "application/json")
                 .addHeader("Cookie", "__cfduid=df598cdc30a11a2eeed0288a538d9d0e91609539720")
