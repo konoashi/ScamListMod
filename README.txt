@@ -9,6 +9,8 @@ Note also that the patches are built against "unrenamed" MCP source code (aka
 srgnames) - this means that you will not be able to read them directly against
 normal code.
 
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=konoashi)](https://github.com/konoashi/github-readme-stats)
+
 Source pack installation information:
 
 Standalone source installation
